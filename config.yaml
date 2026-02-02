@@ -1,0 +1,40 @@
+# Example configuration file for RL Game AI
+
+game:
+  window_name: "YourGameName"  # Name of the game window to capture
+  action_space:
+    - w
+    - a
+    - s
+    - d
+    - space
+  frame_skip: 4          # Number of frames to repeat each action
+  action_delay: 0.05     # Delay after executing action (seconds)
+
+model:
+  type: DQN              # Model type (DQN, PPO, etc.)
+  state_shape: [84, 84, 1]  # Input state dimensions
+  learning_rate: 0.00025
+  gamma: 0.99            # Discount factor
+  update_target_every: 1000  # Update target network every N steps
+
+training:
+  num_episodes: 1000
+  max_steps_per_episode: 500
+  epsilon_start: 1.0     # Initial exploration rate
+  epsilon_end: 0.01      # Minimum exploration rate
+  epsilon_decay: 0.995   # Exploration decay rate
+  batch_size: 32
+  buffer_size: 50000     # Replay buffer capacity
+  update_frequency: 4    # Train every N steps
+  save_frequency: 50     # Save checkpoint every N episodes
+  checkpoint_path: "checkpoints/model.pth"
+
+preprocessing:
+  resize: [84, 84]       # Resize screenshots to this size
+  grayscale: true        # Convert to grayscale
+  normalize: true        # Normalize pixel values to [0, 1]
+
+evaluation:
+  num_episodes: 10       # Number of episodes for evaluation
+  render: true           # Whether to render during evaluation

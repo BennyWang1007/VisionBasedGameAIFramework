@@ -1,0 +1,19 @@
+# Core dependencies
+numpy>=1.21.0
+torch>=2.0.0
+opencv-python>=4.5.0
+
+# Windows API
+pywin32>=300
+psutil>=5.9.0
+
+# Optional but recommended
+tensorboard>=2.10.0
+matplotlib>=3.5.0
+pillow>=9.0.0
+pyyaml>=6.0
+
+# Development
+pytest>=7.0.0
+black>=22.0.0
+flake8>=4.0.0
